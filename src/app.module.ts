@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { AuthController } from './auth/auth.controller';
 import { ContentController } from './content/content.controller';
@@ -26,12 +24,6 @@ import { UserController } from './user/user.controller';
       },
     ]),
   ],
-  controllers: [
-    AppController,
-    AuthController,
-    ContentController,
-    UserController,
-  ],
-  providers: [AppService],
+  controllers: [AuthController, ContentController, UserController],
 })
 export class AppModule {}
